@@ -51,8 +51,21 @@ Pensiamo a quali entità (tabelle) creare  per il nostro database e cerchiamo po
 - name: VARCHAR(50) - NOT NULL
 - lastname: VARCHAR(50) - NOT NULL
 
-## Table name: `votes`
+## Table name: `degree_course_course`
 **Table columns**
 - id: (BIGINT) - primary key - auto increments - NOT NULL
-- exam_call_id: (BIGINT) - NOT NULL
-- student_id: (BIGINT) - NOT NULL
+- degree_course_id: (BIGINT) - foreign key - NOT NULL
+- course_id: (BIGINT) - foreign key - NOT NULL
+
+## Table name: `course_teacher`
+**Table columns**
+- id: (BIGINT) - primary key - auto increments - NOT NULL
+- course_id: (BIGINT) - foreign key - NOT NULL
+- teacher_id: (BIGINT) - foreign key - NOT NULL
+
+## Table name: `student_call`
+**Table columns**
+- id: (BIGINT) - primary key - auto increments - NOT NULL
+- student_id: (BIGINT) - foreign key - NOT NULL
+- exam_call_id: (BIGINT) - foreign key - NOT NULL
+
