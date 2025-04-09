@@ -22,6 +22,7 @@ Pensiamo a quali entità (tabelle) creare  per il nostro database e cerchiamo po
 ## Table name: `degree_courses`
 **Table columns**
 - id: (BIGINT) - primary key - auto increments - NOT NULL
+- deparment_id: (BIGINT) - NOT NULL
 - name: VARCHAR(50) - NOT NULL
 - code: VARCHAR(20) - NOT NULL
 - years: (TINYINT) - NULL
@@ -29,12 +30,14 @@ Pensiamo a quali entità (tabelle) creare  per il nostro database e cerchiamo po
 ## Table name: `courses`
 **Table columns**
 - id: (BIGINT) - primary key - auto increments - NOT NULL
+- degree_course_id: (BIGINT) - NOT NULL
 - name: VARCHAR(50) - NOT NULL
 - CFU: (TINYINT) - NOT NULL
 
 ## Table name: `teachers`
 **Table columns**
 - id: (BIGINT) - primary key - auto increments - NOT NULL
+- course_id: (BIGINT) - NOT NULL
 - name: VARCHAR(50) - NOT NULL
 - lastname: VARCHAR(50) - NOT NULL
 
@@ -48,20 +51,9 @@ Pensiamo a quali entità (tabelle) creare  per il nostro database e cerchiamo po
 ## Table name: `students`
 **Table columns**
 - id: (BIGINT) - primary key - auto increments - NOT NULL
+- degree_course_id: (BIGINT) - NOT NULL
 - name: VARCHAR(50) - NOT NULL
 - lastname: VARCHAR(50) - NOT NULL
-
-## Table name: `degree_course_course`
-**Table columns**
-- id: (BIGINT) - primary key - auto increments - NOT NULL
-- degree_course_id: (BIGINT) - foreign key - NOT NULL
-- course_id: (BIGINT) - foreign key - NOT NULL
-
-## Table name: `course_teacher`
-**Table columns**
-- id: (BIGINT) - primary key - auto increments - NOT NULL
-- course_id: (BIGINT) - foreign key - NOT NULL
-- teacher_id: (BIGINT) - foreign key - NOT NULL
 
 ## Table name: `student_call`
 **Table columns**
