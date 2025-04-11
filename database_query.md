@@ -4,17 +4,15 @@ WHERE `date_of_birth` LIKE '1990%';
 
 SELECT * 
 FROM `courses` 
-WHERE `cfu` > '10';
+WHERE `cfu` > 10';
 
 SELECT * 
 FROM `students`
-WHERE YEAR(date_of_birth) <= '1994' 
-AND MONTH(date_of_birth) <= '04' 
-AND DAY(date_of_birth) <= '10';
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30
 
 SELECT *
 FROM `courses`
-WHERE `year` = '1' 
+WHERE `year` = 1
 AND `period` = 'I semestre';
 
 SELECT * 
@@ -26,7 +24,7 @@ SELECT *
 FROM `degrees` 
 WHERE `level` = 'magistrale';
 
-SELECT COUNT(name)
+SELECT COUNT(id) AS `total_departments`
 FROM `departments`;
 
 SELECT *
